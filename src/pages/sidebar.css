@@ -1,0 +1,60 @@
+/* Estilos mejorados para el sidebar */
+.sidebar {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.sidebar h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.filter {
+    margin-bottom: 1.5rem;
+}
+
+.filter:last-child {
+    margin-bottom: 0;
+}
+
+.filter label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.filter select,
+.filter input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.filter select:focus,
+.filter input[type="text"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.filter input[type="range"] {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
