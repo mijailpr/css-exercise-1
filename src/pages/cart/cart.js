@@ -4,6 +4,11 @@ const PRODUCTS_PER_PAGE = 12;
 let currentPage = 1;
 let cartItems = [];
 
+// Función para manejar errores de carga de imagen
+function handleImageError(event) {
+  event.target.src = '/src/image/product-default.avif';
+}
+
 export function renderCart(container, products = productsData.products) {
   // Crear el contenedor principal
   container.innerHTML = `
@@ -84,7 +89,12 @@ function updateCartDisplay() {
     const itemElement = document.createElement('div');
     itemElement.className = 'cart-item';
     itemElement.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            <img 
+              src="${item.image}" 
+              alt="${item.name}" 
+              class="cart-item-image"
+              onerror="this.onerror=null; this.src='/src/image/product-default.avif';"
+            >
             <div class="cart-item-details">
                 <h3 class="cart-item-name">${item.name}</h3>
                 <div class="cart-item-price">$${item.price.toFixed(2)} x ${item.quantity}</div>
@@ -115,7 +125,12 @@ function renderProducts(products, container) {
     productCard.className = 'product-card';
     productCard.innerHTML = `
             <div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <img 
+                  src="${product.image}" 
+                  alt="${product.name}" 
+                  class="product-image"
+                  onerror="this.onerror=null; this.src='/src/image/product-default.avif';"
+                >
             </div>
             <div class="product-brand">${product.brand}</div>
             <h3 class="product-name">${product.name}</h3>
